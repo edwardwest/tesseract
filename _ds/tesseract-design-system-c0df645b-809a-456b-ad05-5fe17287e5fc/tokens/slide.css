@@ -1,0 +1,15 @@
+/* Reusable slide helpers (class-based; for non-DC consumers) */
+.t-slide { position: relative; width: var(--slide-w); height: var(--slide-h); box-sizing: border-box; overflow: hidden;
+  font-family: var(--font-sans); color: var(--fg-1); background: var(--bg-slide-glow); }
+.t-slide--black { background: var(--surface-base); }
+.t-slide--dark { background: var(--bg-slide-dark); }
+.t-header { position: absolute; left: var(--header-inset); top: 22px; height: 40px; }
+.t-eyebrow { font-size: var(--type-eyebrow); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; font-weight: var(--weight-bold); color: var(--fg-label); }
+.t-h1 { margin: 0; font-size: var(--type-h1); line-height: var(--leading-tight); font-weight: var(--weight-bold); letter-spacing: var(--tracking-headline); text-wrap: balance; }
+.t-h2 { margin: 0; font-size: var(--type-h2); line-height: var(--leading-snug); font-weight: var(--weight-bold); letter-spacing: var(--tracking-headline); text-wrap: balance; }
+.t-body { margin: 0; font-size: var(--type-body); line-height: var(--leading-body); color: var(--fg-3); text-wrap: pretty; }
+.t-photo { border-radius: var(--radius-photo); overflow: hidden; background: var(--ink-200); }
+.t-photo > img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.t-diamond { position: absolute; width: 132px; height: 132px; display: flex; align-items: center; justify-content: center; }
+.t-diamond::before { content: ""; position: absolute; inset: 14px; background: #000; transform: rotate(45deg); border-radius: 18px; }
+.t-diamond > img { position: relative; width: 96px; height: auto; }

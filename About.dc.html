@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>About</title>
+  <meta name="description" content="Tesseract is an integrated real estate development firm that designs and builds fire resilient schools, homes and communities that are beautiful, luxurious, and sustainable.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="_ds/tesseract-design-system-c0df645b-809a-456b-ad05-5fe17287e5fc/styles.css">
+  <script src="_ds/tesseract-design-system-c0df645b-809a-456b-ad05-5fe17287e5fc/_ds_bundle.js"></script>
+  <style>
+    html, body { margin:0; background:#fff; color:#000; font-family:"Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif; -webkit-font-smoothing:antialiased; }
+    * { box-sizing:border-box; }
+    a { color:inherit; } a:hover { color:inherit; }
+  </style>
+</helmet>
+<div style="background:#fff; color:#000; font-family:var(--font-sans); min-height:100vh;">
+  <dc-import name="SiteHeader" theme="light" hint-size="100%,47px"></dc-import>
+
+  <section data-screen-label="About" style="padding:clamp(64px,12vh,140px) 1.5rem clamp(48px,8vh,96px);">
+    <div style="max-width:1000px; margin:0 auto; display:flex; flex-direction:column; align-items:center; gap:40px; text-align:center;">
+      <div style="display:flex; flex-direction:column; gap:16px; align-items:center;">
+        <h1 style="margin:0; font-size:clamp(28px,3.4vw,40px); font-weight:500; line-height:1.25;">About</h1>
+        <p style="margin:0; font-size:16px; line-height:1.5; color:#5c5e62;">Get in touch to bring your vision to life.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:18px; max-width:760px; font-size:17px; line-height:1.6; color:#333; text-wrap:pretty;">
+        <p style="margin:0;">Tesseract is an integrated real estate development firm that designs and builds fire resilient schools, homes and communities that are beautiful, luxurious, and sustainable.</p>
+        <p style="margin:0;">We integrate leading-edge building design, energy and water harvesting, permaculture, and circular flows of material resources.</p>
+        <p style="margin:0;">We utilize procedural architecture and artificial intelligence to optimize spatial layouts and material flows on site.</p>
+        <p style="margin:0;">We are a team of experts who have designed, developed, served as general contractor, and served as architect and landscape architect for diverse projects, including retreat centers, apartment buildings, corporate campuses, single family homes, and ADUs.</p>
+        <p style="margin:0; color:#000; font-weight:700;">We believe that we can affordably build better communities that dramatically elevate quality of life, productivity, and ecological balance.</p>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Team" style="padding:clamp(48px,8vh,96px) 1.5rem;">
+    <div style="max-width:1440px; margin:0 auto; display:flex; flex-direction:column; gap:48px;">
+      <div style="display:flex; flex-direction:column; gap:16px; align-items:center; text-align:center;">
+        <h2 style="margin:0; font-size:clamp(28px,3.4vw,40px); font-weight:500; line-height:1.25;">Team</h2>
+        <p style="margin:0; max-width:760px; font-size:16px; line-height:1.5; color:#5c5e62; text-wrap:pretty;">We are a team of experts who have designed, developed, served as general contractor, and served as architect and landscape architect for diverse projects, including retreat centers, apartment buildings, corporate campuses, single family homes, and ADUs.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:48px 24px;">
+        <sc-for list="{{ team }}" as="p" hint-placeholder-count="5">
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <img src="{{ p.photo }}" alt="{{ p.name }}" style="width:100%; aspect-ratio:1/1; object-fit:cover; display:block; background:#f4f4f4;">
+            <h4 style="margin:8px 0 0; font-size:18px; font-weight:500;">{{ p.name }}</h4>
+            <div style="font-size:14px; font-weight:500; color:#5c5e62;">{{ p.role }}</div>
+            <p style="margin:0; font-size:14px; line-height:1.5; color:#333; text-wrap:pretty;">{{ p.bio }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Advisors" style="padding:clamp(48px,8vh,96px) 1.5rem clamp(64px,10vh,120px);">
+    <div style="max-width:1440px; margin:0 auto; display:flex; flex-direction:column; gap:48px;">
+      <div style="display:flex; flex-direction:column; gap:16px; align-items:center; text-align:center;">
+        <h2 style="margin:0; font-size:clamp(28px,3.4vw,40px); font-weight:500; line-height:1.25;">Advisors</h2>
+        <p style="margin:0; max-width:760px; font-size:16px; line-height:1.5; color:#5c5e62; text-wrap:pretty;">Our partners bring deep subject matter expertise in architecture, circular economies, regenerative development, regenerative agriculture, permaculture, and wastewater treatment.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:48px 24px;">
+        <sc-for list="{{ advisors }}" as="p" hint-placeholder-count="3">
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <img src="{{ p.photo }}" alt="{{ p.name }}" style="width:100%; aspect-ratio:1/1; object-fit:cover; display:block; background:#f4f4f4;">
+            <h4 style="margin:8px 0 0; font-size:18px; font-weight:500;">{{ p.name }}</h4>
+            <div style="font-size:14px; font-weight:500; color:#5c5e62;">{{ p.role }}</div>
+            <p style="margin:0; font-size:14px; line-height:1.5; color:#333; text-wrap:pretty;">{{ p.bio }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="SiteFooter" hint-size="100%,120px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      photoSize: 240,
+      team: [
+        { name: 'Edward West', role: 'Integrated Development', photo: 'assets/site/team-edward-west.jpg', bio: 'Edward has founded and built companies in electric vehicles, placemaking, community technology, and bioregional finance that have transformed lives and livelihoods globally.' },
+        { name: 'Timur Khan', role: 'Development', photo: 'assets/site/team-timur-khan.jpg', bio: 'Timur is an experienced venture builder and third-generation developer and contractor who has structured and developed dozens of residential, commercial, and hospitality projects in the US and Latin America.' },
+        { name: 'Josiah Raison Cain', role: 'Landscape Architect', photo: 'assets/site/team-josiah-raison-cain.jpg', bio: 'Josiah is a landscape architect and ecological design consultant with over two decades of experience working at the nexus of ecology, infrastructure, and urban design. He delivers regenerative master planning, green infrastructure, and elegant landscapes at all scales.' },
+        { name: 'Olga Koroleva', role: 'CFO', photo: 'assets/site/team-olga-koroleva.jpg', bio: 'Olga is a seasoned broker and CFO with an MBA from UCLA Anderson. Named one of the Top 10 Women in Tech by CRE, she lectures on leadership at UC Berkeley Haas and has managed REITs with $5B AUM. She co-founded Home Factory, rebuilding homes after the Santa Rosa fires.' },
+        { name: 'Nathanael Miksis', role: 'AI Systems Architect', photo: 'assets/site/team-nathanael-miksis.jpg', bio: 'Nathanael is a generative AI software developer with two decades of experience in public and private sector transportation, community power, procurement, energy and climate commodities, power grid operations, risk management, process improvement, electricity regulations, and utility rate design.' }
+      ],
+      advisors: [
+        { name: 'Bill Reed', role: 'Planning and Development', photo: 'assets/site/team-bill-reed.jpg', bio: 'Bill is a planning consultant, design process facilitator, teacher, and author in sustainability and regeneration. He is a Founding Board Member of the US Green Building Council and co-founder of the LEED Green Building Rating System.' },
+        { name: 'John Manoochehri', role: 'Architect', photo: 'assets/site/team-john-manoochehri.jpg', bio: 'John is at the leading edge of community-based circular economic and material flow design. His company Base2 is a Tesseract partner.' },
+        { name: 'Dave Boehnlein', role: 'Permaculture Design', photo: 'assets/site/team-dave-boehnlein.jpg', bio: 'Dave serves as the education director at Bullock’s Permaculture Homestead on Orcas Island, Washington. He is also the principal and a founder of Terra Phoenix Design, and a member of the Cascadia Permaculture Institute.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

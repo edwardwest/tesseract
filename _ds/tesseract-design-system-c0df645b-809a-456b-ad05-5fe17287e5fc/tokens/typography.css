@@ -1,0 +1,29 @@
+:root {
+  /* Helvetica Neue throughout — no webfont shipped; system stack */
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+
+  /* 1920x1080 slide scale */
+  --type-wordmark: 140px;
+  --type-display: 96px;
+  --type-h1: 70px;      /* section / page headline */
+  --type-h2: 56px;      /* statement beside photo */
+  --type-h3: 40px;
+  --type-title: 31px;   /* card title */
+  --type-body-lg: 30px;
+  --type-body: 26px;
+  --type-small: 24px;   /* floor for projected text */
+  --type-eyebrow: 24px;
+  --type-bullet: 34px;  /* proof bullets beside a statement */
+
+  --leading-tight: 1.05;
+  --leading-snug: 1.15;
+  --leading-body: 1.42;
+  --leading-bullet: 1.3;
+  --tracking-display: -0.02em;
+  --tracking-headline: -0.01em;
+  --tracking-eyebrow: 0.18em;
+}

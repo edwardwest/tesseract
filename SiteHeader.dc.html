@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/tesseract-design-system-c0df645b-809a-456b-ad05-5fe17287e5fc/styles.css">
+</helmet>
+<div style="font-family:var(--font-sans);">
+  <div style="position:fixed; top:0; left:0; right:0; z-index:11000; background:#fff; transform:{{ scrollNavTransform }}; transition:transform 400ms ease;">
+    <div style="max-width:1440px; margin:0 auto; padding:12px 1.5rem; box-sizing:border-box; display:grid; grid-template-columns:minmax(0,243px) 1fr minmax(0,243px); align-items:center;">
+      <a href="/" style="display:flex; align-items:center;" aria-label="Tesseract home"><img src="assets/site/logo-dark.svg" alt="Tesseract" style="height:31px; display:block;"></a>
+      <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+        <nav style="display:flex; justify-content:center; align-items:center;">
+          <sc-for list="{{ links }}" as="l" hint-placeholder-count="4">
+            <a href="{{ l.href }}" style="color:#000; padding:12px 16px; font-weight:500; font-size:14px; line-height:1.45; text-decoration:none; white-space:nowrap;" style-hover="color:#5c5e62;">{{ l.label }}</a>
+          </sc-for>
+        </nav>
+      </sc-if>
+      <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+        <div></div>
+      </sc-if>
+      <div style="display:flex; justify-content:flex-end;">
+        <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+          <button type="button" onClick="{{ toggle }}" aria-label="Menu" style="background:none; border:0; color:#000; padding:12px; cursor:pointer; font-size:24px; line-height:1; min-width:44px; min-height:44px;">{{ menuGlyph }}</button>
+        </sc-if>
+      </div>
+    </div>
+  </div>
+
+  <section style="text-align:center; background-image:linear-gradient(90deg,#a2a3a5,#f4f4f4 50%,#a2a3a5); padding:12px 1.5rem; color:#000;">
+    <a href="https://form.typeform.com/to/fPFUU89i" style="font-weight:500; font-size:14px; line-height:1.65; color:#000; text-decoration:none;" style-hover="color:#000; text-decoration:underline;">*Inquire now about full builds in the Palisades and Altadena</a>
+  </section>
+
+  <div style="position:relative; height:0; z-index:1000;">
+    <div style="position:absolute; top:0; left:0; right:0; background:{{ navBg }}; padding:12px 0;">
+      <div style="max-width:1440px; margin:0 auto; padding:0 1.5rem; box-sizing:border-box; display:grid; grid-template-columns:minmax(0,243px) 1fr minmax(0,243px); align-items:center;">
+        <a href="/" style="display:flex; align-items:center;" aria-label="Tesseract home"><img src="{{ logoSrc }}" alt="Tesseract" style="height:31px; display:block;"></a>
+        <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+          <nav style="display:flex; justify-content:center; align-items:center;">
+            <sc-for list="{{ links }}" as="l" hint-placeholder-count="4">
+              <a href="{{ l.href }}" style="color:{{ linkColor }}; padding:12px 16px; font-weight:500; font-size:14px; line-height:1.45; text-decoration:none; white-space:nowrap;" style-hover="opacity:0.75;">{{ l.label }}</a>
+            </sc-for>
+          </nav>
+        </sc-if>
+        <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+          <div></div>
+        </sc-if>
+        <div style="display:flex; justify-content:flex-end;">
+          <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+            <button type="button" onClick="{{ toggle }}" aria-label="Menu" style="background:none; border:0; color:{{ linkColor }}; padding:12px; cursor:pointer; font-size:24px; line-height:1; min-width:44px; min-height:44px;">{{ menuGlyph }}</button>
+          </sc-if>
+        </div>
+      </div>
+      <sc-if value="{{ showDrawer }}" hint-placeholder-val="{{ false }}">
+        <nav style="display:flex; flex-direction:column; align-items:center; gap:12px; background:#000; padding:2rem 1.25rem; margin-top:12px;">
+          <sc-for list="{{ links }}" as="l" hint-placeholder-count="4">
+            <a href="{{ l.href }}" style="color:#fff; padding:12px 16px; font-weight:500; font-size:16px; text-decoration:none;">{{ l.label }}</a>
+          </sc-for>
+        </nav>
+      </sc-if>
+    </div>
+  </div>
+  <sc-if value="{{ spacer }}" hint-placeholder-val="{{ false }}">
+    <div style="height:79px;"></div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;1280px&quot;,&quot;height&quot;:&quot;160px&quot;},&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;overlay&quot;,&quot;light&quot;],&quot;default&quot;:&quot;overlay&quot;,&quot;tsType&quot;:&quot;'overlay' | 'light'&quot;}}">
+class Component extends DCLogic {
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1440, y: 0, open: false };
+  onResize = () => this.setState({ w: window.innerWidth });
+  onScroll = () => {
+    const past = window.scrollY > window.innerHeight * 0.9;
+    if (past !== this.state.past) this.setState({ past });
+  };
+  componentDidMount() {
+    window.addEventListener('resize', this.onResize);
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onResize(); this.onScroll();
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('scroll', this.onScroll);
+  }
+  renderVals() {
+    const light = this.props.theme === 'light';
+    const wide = this.state.w > 991;
+    return {
+      wide, narrow: !wide,
+      showDrawer: !wide && this.state.open,
+      menuGlyph: this.state.open ? '×' : '☰',
+      toggle: () => this.setState(s => ({ open: !s.open })),
+      scrollNavTransform: this.state.past ? 'translateY(0)' : 'translateY(-102%)',
+      navBg: light ? '#fff' : 'transparent',
+      linkColor: light ? '#000' : '#fff',
+      logoSrc: light ? 'assets/site/logo-dark.svg' : 'assets/site/logo-white.svg',
+      spacer: light,
+      links: [
+        { label: 'Homes', href: '/' },
+        { label: 'Climate Resilience', href: '/climate-resilience' },
+        { label: 'Integrated Development', href: '/integrated-development' },
+        { label: 'For Developers', href: '/for-developers' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

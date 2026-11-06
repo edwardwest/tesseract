@@ -1,0 +1,12 @@
+:root {
+  --radius-pill: 10px;    /* feature rows */
+  --radius-card: 12px;    /* info cards */
+  --radius-photo: 24px;   /* photo tiles in mosaics */
+  --radius-panel: 40px;   /* large frosted panel */
+  --radius-full: 999px;
+  --shadow-none: none;    /* the deck is flat — depth comes from tone, not shadow */
+  --shadow-photo: 0 0 0 8px #000000;  /* black gutter between photo tiles */
+  --blur-panel: blur(24px); /* @kind other */
+  --duration-fast: 160ms; /* @kind other */
+  --ease-standard: cubic-bezier(.2,.0,.0,1); /* @kind other */
+}

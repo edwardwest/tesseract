@@ -1,0 +1,21 @@
+:root {
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 34px;
+  --space-6: 48px;
+  --space-7: 64px;
+  --space-8: 90px;
+  --slide-w: 1920px;
+  --slide-h: 1080px;
+  --slide-pad-x: 110px;
+  --slide-pad-top: 84px;
+  --slide-pad-bottom: 90px;
+  --header-inset: 24px;  /* small logo top-left */
+  --bullet-gap: 40px;
+  --bullet-indent: 20px;
+  --logo-header-height: 40px;
+  --logo-header-inset-x: 24px;
+  --logo-header-inset-y: 22px;
+}

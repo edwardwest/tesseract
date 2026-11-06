@@ -1,0 +1,40 @@
+:root {
+  /* Base — monochrome ink scale sampled from the Aug 2026 investor deck */
+  --ink-0: #000000;      /* slide base, title slide */
+  --ink-50: #0B0B0A;
+  --ink-100: #0E0F0B;    /* dark slide field */
+  --ink-150: #161616;
+  --ink-200: #1C1C15;    /* recessed card */
+  --ink-300: #2D2C28;    /* raised card on gradient */
+  --ink-350: #302D28;    /* feature-row pill */
+  --ink-400: #36332E;    /* gradient midpoint */
+  --taupe-500: #4D4842;  /* gradient warm end (bottom-right glow) */
+  --stone-600: #5B5A50;
+  --stone-500: #8A897E;  /* eyebrows, labels */
+  --stone-400: #A3A29A;  /* secondary body */
+  --stone-200: #D8D8D8;  /* light body on dark */
+  --white: #FFFFFF;
+
+  /* Semantic */
+  --fg-1: var(--white);
+  --fg-2: var(--stone-200);
+  --fg-3: var(--stone-400);
+  --fg-label: var(--stone-500);
+  --fg-faint: var(--stone-600);
+  --surface-base: var(--ink-0);
+  --surface-field: var(--ink-100);
+  --surface-card: rgba(255,255,255,0.06);
+  --surface-card-solid: var(--ink-300);
+  --surface-pill: var(--ink-350);
+  --surface-panel: rgba(120,114,104,0.45);  /* large frosted panel (ecosystem / materials) */
+  --border-subtle: rgba(255,255,255,0.12);
+  --border-strong: rgba(255,255,255,0.26);
+  --rule: rgba(255,255,255,0.16);
+
+  /* Signature backgrounds */
+  --bg-slide-warm: linear-gradient(120deg, #000000 30%, #36332E 70%, #4D4842 100%);
+  --bg-slide-glow: radial-gradient(90% 110% at 100% 100%, rgba(77,72,66,.95) 0%, rgba(54,51,46,.6) 35%, transparent 70%), #000000;
+  --bg-slide-dark: linear-gradient(175deg, #161616 0%, #0E0F0B 55%, #0E0E0B 100%);
+  --scrim-bottom: linear-gradient(180deg, rgba(0,0,0,0) 45%, rgba(0,0,0,.78) 100%); /* @kind color */
+  --scrim-left: linear-gradient(90deg, rgba(0,0,0,.92) 0%, rgba(0,0,0,.6) 45%, rgba(0,0,0,0) 100%); /* @kind color */
+}

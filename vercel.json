@@ -1,0 +1,16 @@
+{
+  "cleanUrls": false,
+  "rewrites": [
+    { "source": "/", "destination": "/Home.dc.html" },
+    { "source": "/climate-resilience", "destination": "/Climate-Resilience.dc.html" },
+    { "source": "/integrated-development", "destination": "/Integrated-Development.dc.html" },
+    { "source": "/for-developers", "destination": "/For-Developers.dc.html" },
+    { "source": "/learn-more", "destination": "/Process.dc.html" },
+    { "source": "/about", "destination": "/About.dc.html" },
+    { "source": "/contact", "destination": "/Contact.dc.html" }
+  ],
+  "redirects": [
+    { "source": "/climate-resillience", "destination": "/climate-resilience", "permanent": true },
+    { "source": "/intergrated-development", "destination": "/integrated-development", "permanent": true }
+  ]
+}

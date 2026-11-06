@@ -1,0 +1,290 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/content/**",
+              "components/slide-parts/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='BulletList'] > JSXAttribute > JSXIdentifier[name!=/^(?:items|size|tone|style|key|ref|className|style|children)$/]",
+        "message": "<BulletList> doesn't accept that prop. Declared props: items, size, tone, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='BulletList'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:primary|muted)$/]",
+        "message": "<BulletList> tone must be one of 'primary' | 'muted'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DiamondBadge'] > JSXAttribute > JSXIdentifier[name!=/^(?:src|size|style|key|ref|className|style|children)$/]",
+        "message": "<DiamondBadge> doesn't accept that prop. Declared props: src, size, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Eyebrow'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|tone|style|key|ref|className|style|children)$/]",
+        "message": "<Eyebrow> doesn't accept that prop. Declared props: children, tone, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Eyebrow'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:label|strong)$/]",
+        "message": "<Eyebrow> tone must be one of 'label' | 'strong'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='FeatureRow'] > JSXAttribute > JSXIdentifier[name!=/^(?:icon|children|style|key|ref|className|style|children)$/]",
+        "message": "<FeatureRow> doesn't accept that prop. Declared props: icon, children, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='InfoCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:kicker|title|children|emphasis|style|key|ref|className|style|children)$/]",
+        "message": "<InfoCard> doesn't accept that prop. Declared props: kicker, title, children, emphasis, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='PersonCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:photo|name|role|bio|size|style|key|ref|className|style|children)$/]",
+        "message": "<PersonCard> doesn't accept that prop. Declared props: photo, name, role, bio, size, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SlideHeader'] > JSXAttribute > JSXIdentifier[name!=/^(?:src|height|style|key|ref|className|style|children)$/]",
+        "message": "<SlideHeader> doesn't accept that prop. Declared props: src, height, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StatusPair'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|now|next|style|key|ref|className|style|children)$/]",
+        "message": "<StatusPair> doesn't accept that prop. Declared props: label, now, next, style."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "BulletList": {
+        "replaces": []
+      },
+      "DiamondBadge": {
+        "replaces": []
+      },
+      "Eyebrow": {
+        "replaces": []
+      },
+      "FeatureRow": {
+        "replaces": []
+      },
+      "InfoCard": {
+        "replaces": []
+      },
+      "PersonCard": {
+        "replaces": []
+      },
+      "SlideHeader": {
+        "replaces": []
+      },
+      "StatusPair": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--bg-slide-dark",
+      "--bg-slide-glow",
+      "--bg-slide-warm",
+      "--blur-panel",
+      "--border-strong",
+      "--border-subtle",
+      "--bullet-gap",
+      "--bullet-indent",
+      "--duration-fast",
+      "--ease-standard",
+      "--fg-1",
+      "--fg-2",
+      "--fg-3",
+      "--fg-faint",
+      "--fg-label",
+      "--font-sans",
+      "--header-inset",
+      "--ink-0",
+      "--ink-100",
+      "--ink-150",
+      "--ink-200",
+      "--ink-300",
+      "--ink-350",
+      "--ink-400",
+      "--ink-50",
+      "--leading-body",
+      "--leading-bullet",
+      "--leading-snug",
+      "--leading-tight",
+      "--logo-header-height",
+      "--logo-header-inset-x",
+      "--logo-header-inset-y",
+      "--radius-card",
+      "--radius-full",
+      "--radius-panel",
+      "--radius-photo",
+      "--radius-pill",
+      "--rule",
+      "--scrim-bottom",
+      "--scrim-left",
+      "--shadow-none",
+      "--shadow-photo",
+      "--slide-h",
+      "--slide-pad-bottom",
+      "--slide-pad-top",
+      "--slide-pad-x",
+      "--slide-w",
+      "--space-1",
+      "--space-2",
+      "--space-3",
+      "--space-4",
+      "--space-5",
+      "--space-6",
+      "--space-7",
+      "--space-8",
+      "--stone-200",
+      "--stone-400",
+      "--stone-500",
+      "--stone-600",
+      "--surface-base",
+      "--surface-card",
+      "--surface-card-solid",
+      "--surface-field",
+      "--surface-panel",
+      "--surface-pill",
+      "--taupe-500",
+      "--tracking-display",
+      "--tracking-eyebrow",
+      "--tracking-headline",
+      "--type-body",
+      "--type-body-lg",
+      "--type-bullet",
+      "--type-display",
+      "--type-eyebrow",
+      "--type-h1",
+      "--type-h2",
+      "--type-h3",
+      "--type-small",
+      "--type-title",
+      "--type-wordmark",
+      "--weight-bold",
+      "--weight-medium",
+      "--weight-regular",
+      "--white"
+    ],
+    "tokenKinds": {
+      "--ink-0": "color",
+      "--ink-50": "color",
+      "--ink-100": "color",
+      "--ink-150": "color",
+      "--ink-200": "color",
+      "--ink-300": "color",
+      "--ink-350": "color",
+      "--ink-400": "color",
+      "--taupe-500": "color",
+      "--stone-600": "color",
+      "--stone-500": "color",
+      "--stone-400": "color",
+      "--stone-200": "color",
+      "--white": "color",
+      "--fg-1": "color",
+      "--fg-2": "color",
+      "--fg-3": "color",
+      "--fg-label": "color",
+      "--fg-faint": "color",
+      "--surface-base": "color",
+      "--surface-field": "color",
+      "--surface-card": "color",
+      "--surface-card-solid": "color",
+      "--surface-pill": "color",
+      "--surface-panel": "color",
+      "--border-subtle": "color",
+      "--border-strong": "color",
+      "--rule": "color",
+      "--bg-slide-warm": "color",
+      "--bg-slide-glow": "color",
+      "--bg-slide-dark": "color",
+      "--scrim-bottom": "color",
+      "--scrim-left": "color",
+      "--font-sans": "font",
+      "--weight-regular": "font",
+      "--weight-medium": "font",
+      "--weight-bold": "font",
+      "--type-wordmark": "font",
+      "--type-display": "font",
+      "--type-h1": "font",
+      "--type-h2": "font",
+      "--type-h3": "font",
+      "--type-title": "font",
+      "--type-body-lg": "font",
+      "--type-body": "font",
+      "--type-small": "font",
+      "--type-eyebrow": "font",
+      "--type-bullet": "font",
+      "--leading-tight": "font",
+      "--leading-snug": "font",
+      "--leading-body": "font",
+      "--leading-bullet": "font",
+      "--tracking-display": "font",
+      "--tracking-headline": "font",
+      "--tracking-eyebrow": "font",
+      "--space-1": "spacing",
+      "--space-2": "spacing",
+      "--space-3": "spacing",
+      "--space-4": "spacing",
+      "--space-5": "spacing",
+      "--space-6": "spacing",
+      "--space-7": "spacing",
+      "--space-8": "spacing",
+      "--slide-w": "spacing",
+      "--slide-h": "spacing",
+      "--slide-pad-x": "spacing",
+      "--slide-pad-top": "spacing",
+      "--slide-pad-bottom": "spacing",
+      "--header-inset": "spacing",
+      "--bullet-gap": "spacing",
+      "--bullet-indent": "spacing",
+      "--logo-header-height": "spacing",
+      "--logo-header-inset-x": "spacing",
+      "--logo-header-inset-y": "spacing",
+      "--radius-pill": "radius",
+      "--radius-card": "radius",
+      "--radius-photo": "radius",
+      "--radius-panel": "radius",
+      "--radius-full": "radius",
+      "--shadow-none": "shadow",
+      "--shadow-photo": "shadow",
+      "--blur-panel": "other",
+      "--duration-fast": "other",
+      "--ease-standard": "other"
+    },
+    "fontFamilies": []
+  }
+}
